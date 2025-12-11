@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/f31e45f9-1e28-4a36-b13d-44becde3addd
 | Vite                  | PNPM                  | Local Storage       | ENV variables        |
 | DOM Manipulation via JS         | Vite     | CSS Filters                | Responsiveness        |
 
-## Future to-do
+## Future To-do's
 Prioritizing deployment over perfectionism:
 - [ ] Adapt the project arquitecture to better practices
 - [ ] Simplify the Watchlist methods and apply nested function calls

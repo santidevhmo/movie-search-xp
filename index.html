@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+  <title>scrimba-movie-watchlist</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="window" style="width: 100%; max-width: 800px;">
+      <div class="title-bar">
+        <div class="title-bar-text">OMDB Movie Searcher</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <!-- Movies Parent Container -->
+        <div class="movies-container">
+          <!-- Header -->
+          <div class="header">
+            <div class="header-top">
+              <h2>Find your movie</h2>
+              <button class="open-watchlist-view">Open my watchlist</button>
+            </div>
+            <!-- Search Input Bar -->
+            <form class="search-input" action="/search" method="get">
+              <input type="search" id="search-input" name="q" placeholder="Search...">
+              <button id="search-submit" type="submit">Search</button>
+            </form>
+          </div>
+
+          <!-- Movies Result List -->
+          <div class="results-container"></div>
+
+        </div>
+
+        <!-- My Watchlist List -->
+        <div class="watchlist-container">
+          <!-- Header -->
+          <div class="header">
+            <div class="header-top">
+              <h2>My watchlist</h2>
+              <button class="open-movies-view">Search for movies</button>
+            </div>
+          </div>
+
+          <!-- Watchlist Result List -->
+          <div class="watchlist-results-container"></div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

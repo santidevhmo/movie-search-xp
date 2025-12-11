@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "Tahoma";
+  src: url("/tahoma.otf")
+}
+
+body {
+  margin: 0px;
+  width: 100vw;
+  height: 100dvh;
+  background-image: url("https://tjkelly.com/wp-content/uploads/windows-xp-desktop-background-wallpaper-crystal-800x600.jpg");
+  background-size: cover;
+  background-repeat: none;
+  font-family: "Tahoma" !important; /* Overrding default Arial set from unknown location */
+  overflow-y: hidden;
+}
+
+h2 {
+  font-size: 50px !important;
+  /* Overriding default h2 font size set from unknown location */
+}
+
+h4 {
+  font-size: 30px !important;
+  /* Overriding default h2 font size set from unknown location */
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  max-height: 90dvh;
+  overflow-y: hidden;
+  padding: 20px;
+}
+
+.window {
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+/* ====== MOVIES PARENT CONTAINER ======== */
+
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  ;
+  /* Default */
+}
+
+/* ====== WATCHLIST PARENT CONTAINER ======== */
+
+.watchlist-container {
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  ;
+  /* Default */
+}
+
+
+/* ====== HEADER ======== */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .header-top {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-top > h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Open my watchlist btn */
+.open-watchlist-view {
+  height: 30px;
+  font-size: 15px;
+}
+@media (max-width: 600px) {
+  .open-watchlist-view {
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  } 
+}
+
+
+/* Open Search View btn */
+.open-movies-view {
+  height: 30px;
+  font-size: 15px;
+}
+
+
+.search-input {
+  display: flex;
+  width: 100%;
+}
+
+.search-input>input {
+  width: 80%;
+}
+
+.search-input>button {
+  width: 20%;
+}
+
+/* ====== MOVIE RESULTS LIST CONTAINER ====== */
+.results-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 500px;
+  /* Add a max-height constraint for overflow to work */
+}
+
+@media (max-width: 600px) {
+  .results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .results-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Single Movie Instance Parent Container */
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0px;
+  gap: 0px;
+  /* border-bottom: 1px solid grey; */
+}
+
+.movie-poster {
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 2/3;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+
+  /* CSS Pixelation Effect - reduced intensity */
+  filter: contrast(1.1) saturate(1.0) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pixelate'%3E%3CfeFlood x='0' y='0' height='1' width='1'/%3E%3CfeComposite width='4' height='4'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='2'/%3E%3C/filter%3E%3C/svg%3E#pixelate");
+
+  /* Prevent anti-aliasing */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.movie-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  padding: 20px;
+}
+
+.movie-info-container>h2 {
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.movie-title {
+  margin: 0px;
+}
+
+.movie-year {
+  margin: 0px;
+  font-size: 20px;
+}
+
+.watchlist-btn {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+/* ====== WATCHLIST RESULTS LIST CONTAINER ====== */
+.watchlist-results-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 500px;
+  /* Add a max-height constraint for overflow to work */
+}
